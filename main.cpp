@@ -14,6 +14,9 @@
 #include <Sphere.h>
 #include <Table.h>
 #include <Chair.h>
+#include <Television.h>
+#include <Rack.h>
+#include <Sofa.h>
 
 #include <iostream>
 
@@ -49,6 +52,15 @@ int main() {
 
     Chair chair(glm::vec3(0.0f, 3.0f, 0.0f), 0.0f);
     chair.scale = glm::vec3(2.5f);
+
+    Television television(glm::vec3(3.0f, 3.0f, 0.0f), 0.0f);
+    television.scale = glm::vec3(2.5f);
+
+    Rack rack(glm::vec3(-3.0f, 3.0f, 0.0f), 0.0f);
+    rack.scale = glm::vec3(2.5f);
+
+    Sofa sofa(glm::vec3(-3.0f, -3.0f, 0.0f), 0.0f);
+    sofa.scale = glm::vec3(2.5f);
 
 
 
@@ -93,10 +105,10 @@ int main() {
 
         //Model base com rotação leve global
         glm::mat4 model = glm::mat4(1.0f);
-        /*float angle = 20.0f;
+        float angle = 20.0f;
         model = glm::rotate(model,
                             (angle * (float)glfwGetTime()) / 20.0f,
-                            glm::vec3(0.0f, 0.3f, 0.0f));*/
+                            glm::vec3(0.0f, 0.3f, 0.0f));
         shader.setMat4("model", model);
 
         //View e Projection
@@ -116,6 +128,9 @@ int main() {
 
         table.draw(shader, model);
         chair.draw(shader, model);
+        television.draw(shader, model);
+        rack.draw(shader, model);
+        sofa.draw(shader, model);
 
         /*
         //Prisma

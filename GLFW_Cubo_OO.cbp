@@ -54,9 +54,12 @@
 		<Unit filename="include/Mesh.h" />
 		<Unit filename="include/Object.h" />
 		<Unit filename="include/Prism.h" />
+		<Unit filename="include/Rack.h" />
 		<Unit filename="include/Shader.h" />
+		<Unit filename="include/Sofa.h" />
 		<Unit filename="include/Sphere.h" />
 		<Unit filename="include/Table.h" />
+		<Unit filename="include/Television.h" />
 		<Unit filename="include/Texture.h" />
 		<Unit filename="include/stb_image.h" />
 		<Unit filename="main.cpp" />
@@ -68,8 +71,11 @@
 		<Unit filename="src/Mesh.cpp" />
 		<Unit filename="src/Object.cpp" />
 		<Unit filename="src/Prism.cpp" />
+		<Unit filename="src/Rack.cpp" />
+		<Unit filename="src/Sofa.cpp" />
 		<Unit filename="src/Sphere.cpp" />
 		<Unit filename="src/Table.cpp" />
+		<Unit filename="src/Television.cpp" />
 		<Unit filename="src/Texture.cpp" />
 		<Unit filename="src/stb_image.cpp" />
 		<Extensions />

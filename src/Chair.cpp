@@ -51,15 +51,14 @@ void Chair::init() {
     ));
 
     // encosto
-
     parts.push_back(std::make_unique<Cylinder>(
-        glm::vec3(0.4f, 0.0f, -0.4f),
+        glm::vec3(0.4f, -0.1f, -0.4f),
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.07f, 0.9f, 0.07f)
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
-        glm::vec3(-0.4f, 0.0f, -0.4f),
+        glm::vec3(-0.4f, -0.1f, -0.4f),
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.07f, 0.9f, 0.07f)
     ));
@@ -80,7 +79,7 @@ void Chair::init() {
     ));
 
     parts.push_back(std::make_unique<Sphere>(
-        glm::vec3(0.4f, 0.45f, -0.4f),
+        glm::vec3(0.4f, 0.35f, -0.4f),
         glm::vec3(0.0f),
         glm::vec3(1.0f),
         0.0f,
@@ -88,7 +87,7 @@ void Chair::init() {
     ));
 
     parts.push_back(std::make_unique<Sphere>(
-        glm::vec3(-0.4f, 0.45f, -0.4f),
+        glm::vec3(-0.4f, 0.35f, -0.4f),
         glm::vec3(0.0f),
         glm::vec3(1.0f),
         0.0f,

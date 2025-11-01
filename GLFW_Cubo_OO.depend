@@ -1579,7 +1579,7 @@
 	<vector>
 	<memory>
 
-1762018790 source:d:\prog\sdl2\trabalho2\tde-opengl\main.cpp
+1762021231 source:d:\prog\sdl2\trabalho2\tde-opengl\main.cpp
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<glm/glm.hpp>
@@ -1600,6 +1600,8 @@
 	<Sofa.h>
 	<Fork.h>
 	<Knife.h>
+	<Bed.h>
+	<Pillow.h>
 	<iostream>
 
 1761608286 d:\prog\sdl2\trabalho2\tde-opengl\include\shader.h
@@ -1799,12 +1801,38 @@
 	"Fork.h"
 	"Cube.h"
 
-1762018753 source:d:\prog\sdl2\trabalho2\tde-opengl\src\knife.cpp
+1762019236 source:d:\prog\sdl2\trabalho2\tde-opengl\src\knife.cpp
 	"Knife.h"
+	"Cube.h"
+	"Sphere.h"
+
+1762018645 d:\prog\sdl2\trabalho2\tde-opengl\include\knife.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	"Object.h"
+	"Shader.h"
+	<vector>
+	<memory>
+
+1762020380 source:d:\prog\sdl2\trabalho2\tde-opengl\src\bed.cpp
+	"Bed.h"
 	"Cube.h"
 	"Cylinder.h"
 
-1762018645 d:\prog\sdl2\trabalho2\tde-opengl\include\knife.h
+1762019473 d:\prog\sdl2\trabalho2\tde-opengl\include\bed.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	"Object.h"
+	"Shader.h"
+	<vector>
+	<memory>
+
+1762020928 source:d:\prog\sdl2\trabalho2\tde-opengl\src\pillow.cpp
+	"Pillow.h"
+	"Cube.h"
+	"Sphere.h"
+
+1762020245 d:\prog\sdl2\trabalho2\tde-opengl\include\pillow.h
 	<glm/glm.hpp>
 	<glm/gtc/matrix_transform.hpp>
 	"Object.h"

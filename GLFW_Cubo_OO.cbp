@@ -48,6 +48,7 @@
 		</Compiler>
 		<Unit filename="include/Application.h" />
 		<Unit filename="include/Banrisul.h" />
+		<Unit filename="include/Bed.h" />
 		<Unit filename="include/Chair.h" />
 		<Unit filename="include/Cube.h" />
 		<Unit filename="include/Cylinder.h" />
@@ -55,6 +56,7 @@
 		<Unit filename="include/Knife.h" />
 		<Unit filename="include/Mesh.h" />
 		<Unit filename="include/Object.h" />
+		<Unit filename="include/Pillow.h" />
 		<Unit filename="include/Prism.h" />
 		<Unit filename="include/Rack.h" />
 		<Unit filename="include/Shader.h" />
@@ -67,6 +69,7 @@
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
 		<Unit filename="src/Banrisul.cpp" />
+		<Unit filename="src/Bed.cpp" />
 		<Unit filename="src/Chair.cpp" />
 		<Unit filename="src/Cube.cpp" />
 		<Unit filename="src/Cylinder.cpp" />
@@ -74,6 +77,7 @@
 		<Unit filename="src/Knife.cpp" />
 		<Unit filename="src/Mesh.cpp" />
 		<Unit filename="src/Object.cpp" />
+		<Unit filename="src/Pillow.cpp" />
 		<Unit filename="src/Prism.cpp" />
 		<Unit filename="src/Rack.cpp" />
 		<Unit filename="src/Sofa.cpp" />

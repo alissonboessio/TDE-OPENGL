@@ -17,6 +17,8 @@
 #include <Television.h>
 #include <Rack.h>
 #include <Sofa.h>
+#include <Fork.h>
+#include <Knife.h>
 
 #include <iostream>
 
@@ -119,34 +121,11 @@ int main() {
     Sofa sofa(glm::vec3(-3.0f, -3.0f, 0.0f), 0.0f);
     sofa.scale = glm::vec3(2.5f);
 
+    Fork fork(glm::vec3(0.0f, 5.0f, 0.0f), 0.0f);
+    fork.scale = glm::vec3(2.5f);
 
-
-    //Prisma
-    TriangularPrism prism(glm::vec3(3.0f, 0.0f, -4.0f));
-    prism.scale    = glm::vec3(2.0f);
-    prism.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
-    prism.angle    = 0.0f;
-
-    //
-    Cylinder cyl(
-        glm::vec3(-1.5f, 0.0f, -5.0f),
-        glm::vec3(0.0f, 1.0f, 0.0f),
-        glm::vec3(2.0f),
-        0.0f,
-        1.0f,
-        0.5f,
-        48
-    );
-
-    Sphere sphere(
-        glm::vec3(0.0f, 0.0f, -6.0f),
-        glm::vec3(0.0f, 1.0f, 0.0f),
-        glm::vec3(2.0f),
-        0.0f,
-        0.5f,
-        32,
-        48
-    );
+    Knife knife(glm::vec3(5.0f, 5.0f, 0.0f), 0.0f);
+    knife.scale = glm::vec3(2.5f);
 
     //Loop principal
     while (!glfwWindowShouldClose(app.getWindow())) {
@@ -190,11 +169,13 @@ int main() {
 
         // --------- Desenho ---------
 
-        table.draw(shader, model);
-        chair.draw(shader, model);
-        television.draw(shader, model);
-        rack.draw(shader, model);
-        sofa.draw(shader, model);
+        // table.draw(shader, model);
+        //chair.draw(shader, model);
+        //television.draw(shader, model);
+        //rack.draw(shader, model);
+        //sofa.draw(shader, model);
+        fork.draw(shader, model);
+        knife.draw(shader, model);
 
         // Swap buffers e eventos
         glfwSwapBuffers(app.getWindow());

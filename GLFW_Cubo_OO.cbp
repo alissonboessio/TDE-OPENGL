@@ -51,6 +51,8 @@
 		<Unit filename="include/Chair.h" />
 		<Unit filename="include/Cube.h" />
 		<Unit filename="include/Cylinder.h" />
+		<Unit filename="include/Fork.h" />
+		<Unit filename="include/Knife.h" />
 		<Unit filename="include/Mesh.h" />
 		<Unit filename="include/Object.h" />
 		<Unit filename="include/Prism.h" />
@@ -68,6 +70,8 @@
 		<Unit filename="src/Chair.cpp" />
 		<Unit filename="src/Cube.cpp" />
 		<Unit filename="src/Cylinder.cpp" />
+		<Unit filename="src/Fork.cpp" />
+		<Unit filename="src/Knife.cpp" />
 		<Unit filename="src/Mesh.cpp" />
 		<Unit filename="src/Object.cpp" />
 		<Unit filename="src/Prism.cpp" />

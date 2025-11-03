@@ -21,6 +21,7 @@
 #include <Knife.h>
 #include <Bed.h>
 #include <Pillow.h>
+#include <Pot.h>
 
 #include <iostream>
 
@@ -135,6 +136,9 @@ int main() {
     Pillow pillow(glm::vec3(1.0f, 1.0f, 3.0f), 0.0f);
     pillow.scale = glm::vec3(1.0f);
 
+    Pot pot(glm::vec3(-3.0f, 1.0f, 3.0f), 0.0f);
+    pot.scale = glm::vec3(3.0f);
+
     //Loop principal
     while (!glfwWindowShouldClose(app.getWindow())) {
         float now = glfwGetTime();
@@ -184,8 +188,9 @@ int main() {
         //sofa.draw(shader, model);
         //fork.draw(shader, model);
         //knife.draw(shader, model);
-        bed.draw(shader, model);
-        pillow.draw(shader, model);
+        //bed.draw(shader, model);
+        //pillow.draw(shader, model);
+        pot.draw(shader, model);
 
         // Swap buffers e eventos
         glfwSwapBuffers(app.getWindow());

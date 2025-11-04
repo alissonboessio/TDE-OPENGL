@@ -22,14 +22,15 @@
 #include <Bed.h>
 #include <Pillow.h>
 #include <Pot.h>
+#include <Room.h>
 
 #include <iostream>
 
-glm::vec3 cameraPos   = glm::vec3(0.0f, 0.0f,  20.0f);
-glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
-glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f,  0.0f);
-float yaw        = -90.0f;
-float pitch      = 0.0f;
+glm::vec3 cameraPos   = glm::vec3(-4.0f, 12.5f, 15.0f);
+glm::vec3 cameraFront = glm::vec3(0.3f, 0.6f, -0.7f);
+glm::vec3 cameraUp    = glm::vec3(0.0f, 1.0f, 0.0f);
+float yaw        = -65.0f;
+float pitch      = -40.0f;
 float sensitivity= 0.2f;
 
 void viraCamera(float x, float y) {
@@ -63,7 +64,7 @@ void processInput(GLFWwindow* window, float deltaTime) {
     if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS)
         cameraPos += glm::normalize(glm::cross(cameraFront, cameraUp)) * cameraSpeed;
 
-    // Subir/Descer (Q/Z)
+    // Subir/Descer (Espaço/Shift Esquerdo)
     if (glfwGetKey(window, GLFW_KEY_SPACE) == GLFW_PRESS)
         cameraPos += glm::vec3(0.0f, 1.0f, 0.0f) * cameraSpeed;
     if (glfwGetKey(window, GLFW_KEY_LEFT_SHIFT) == GLFW_PRESS)
@@ -80,12 +81,14 @@ void processInput(GLFWwindow* window, float deltaTime) {
         viraCamera( 1.0f, 0.0f);
 
     if (glfwGetKey(window, GLFW_KEY_R) == GLFW_PRESS) {
-        cameraPos   = glm::vec3(0.0f, 0.0f, 20.0f);
-        cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
+        cameraPos   = glm::vec3(-4.0f, 12.5f, 15.0f);
+        cameraFront = glm::vec3(0.3f, 0.6f, -0.7f);
         cameraUp    = glm::vec3(0.0f, 1.0f, 0.0f);
-        yaw         = -90.0f;
-        pitch       = 0.0f;
+        yaw         = -65.0f;
+        pitch       = -40.0f;
+        viraCamera(0.0f, -1.0f);
     }
+
 }
 // ================================================================
 
@@ -139,6 +142,16 @@ int main() {
     Pot pot(glm::vec3(-3.0f, 1.0f, 3.0f), 0.0f);
     pot.scale = glm::vec3(3.0f);
 
+    Room room1(glm::vec3(3.0f, 0.0f, -3.0f), 0.0f);
+    room1.scale = glm::vec3(5.0f);
+
+    Room room2(glm::vec3(-2.5f, 0.0f, 0.0f), 0.0f);
+    room2.scale = glm::vec3(6.0f, 5.0f, 5.0f);
+
+    Room room3(glm::vec3(3.75f, 0.0f, 3.25f), 0.0f);
+    room3.scale = glm::vec3(6.5f, 5.0f, 8.0f);
+
+    viraCamera(0.0f, -1.0f);
     //Loop principal
     while (!glfwWindowShouldClose(app.getWindow())) {
         float now = glfwGetTime();
@@ -190,7 +203,10 @@ int main() {
         //knife.draw(shader, model);
         //bed.draw(shader, model);
         //pillow.draw(shader, model);
-        pot.draw(shader, model);
+        //pot.draw(shader, model);
+        room1.draw(shader, model);
+        room2.draw(shader, model);
+        room3.draw(shader, model);
 
         // Swap buffers e eventos
         glfwSwapBuffers(app.getWindow());

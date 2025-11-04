@@ -1579,7 +1579,7 @@
 	<vector>
 	<memory>
 
-1762213479 source:d:\prog\sdl2\trabalho2\tde-opengl\main.cpp
+1762213986 source:d:\prog\sdl2\trabalho2\tde-opengl\main.cpp
 	<GL/glew.h>
 	<GLFW/glfw3.h>
 	<glm/glm.hpp>
@@ -1603,6 +1603,7 @@
 	<Bed.h>
 	<Pillow.h>
 	<Pot.h>
+	<Room.h>
 	<iostream>
 
 1761608286 d:\prog\sdl2\trabalho2\tde-opengl\include\shader.h
@@ -1841,7 +1842,7 @@
 	<vector>
 	<memory>
 
-1762213376 source:d:\prog\sdl2\trabalho2\tde-opengl\src\pot.cpp
+1762213724 source:d:\prog\sdl2\trabalho2\tde-opengl\src\pot.cpp
 	"Pot.h"
 	"Cylinder.h"
 	"Cube.h"
@@ -1854,4 +1855,16 @@
 	"Shader.h"
 	<vector>
 	<memory>
+
+1762213824 d:\prog\sdl2\trabalho2\tde-opengl\include\room.h
+	<glm/glm.hpp>
+	<glm/gtc/matrix_transform.hpp>
+	"Object.h"
+	"Shader.h"
+	<vector>
+	<memory>
+
+1762214166 source:d:\prog\sdl2\trabalho2\tde-opengl\src\room.cpp
+	"Room.h"
+	"Cube.h"
 

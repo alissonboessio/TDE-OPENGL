@@ -60,6 +60,7 @@
 		<Unit filename="include/Pot.h" />
 		<Unit filename="include/Prism.h" />
 		<Unit filename="include/Rack.h" />
+		<Unit filename="include/Room.h" />
 		<Unit filename="include/Shader.h" />
 		<Unit filename="include/Sofa.h" />
 		<Unit filename="include/Sphere.h" />
@@ -82,6 +83,7 @@
 		<Unit filename="src/Pot.cpp" />
 		<Unit filename="src/Prism.cpp" />
 		<Unit filename="src/Rack.cpp" />
+		<Unit filename="src/Room.cpp" />
 		<Unit filename="src/Sofa.cpp" />
 		<Unit filename="src/Sphere.cpp" />
 		<Unit filename="src/Table.cpp" />

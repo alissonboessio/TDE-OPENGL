@@ -110,46 +110,115 @@ int main() {
     shader.setInt("texture1", 0);
     shader.setInt("texture2", 1);
 
-
-    Table table(glm::vec3(0.0f, -3.0f, 0.0f), 0.0f);
-    table.scale = glm::vec3(2.5f);
-
-
-    Chair chair(glm::vec3(0.0f, 3.0f, 0.0f), 0.0f);
-    chair.scale = glm::vec3(2.5f);
-
-    Television television(glm::vec3(3.0f, 3.0f, 0.0f), 0.0f);
-    television.scale = glm::vec3(2.5f);
-
-    Rack rack(glm::vec3(-3.0f, 3.0f, 0.0f), 0.0f);
-    rack.scale = glm::vec3(2.5f);
-
-    Sofa sofa(glm::vec3(-3.0f, -3.0f, 0.0f), 0.0f);
-    sofa.scale = glm::vec3(2.5f);
-
-    Fork fork(glm::vec3(0.0f, 0.0f, 0.0f), 0.0f);
-    fork.scale = glm::vec3(2.5f);
-
-    Knife knife(glm::vec3(5.0f, 5.0f, 0.0f), 0.0f);
-    knife.scale = glm::vec3(2.5f);
-
-    Bed bed(glm::vec3(0.0f, 0.0f, 5.0f), 0.0f);
-    bed.scale = glm::vec3(5.0f);
-
-    Pillow pillow(glm::vec3(1.0f, 1.0f, 3.0f), 0.0f);
-    pillow.scale = glm::vec3(1.0f);
-
-    Pot pot(glm::vec3(-3.0f, 1.0f, 3.0f), 0.0f);
-    pot.scale = glm::vec3(3.0f);
-
-    Room room1(glm::vec3(3.0f, 0.0f, -3.0f), 0.0f);
+    Room room1(glm::vec3(3.0f, 2.5f, -3.0f), 0.0f);
     room1.scale = glm::vec3(5.0f);
 
-    Room room2(glm::vec3(-2.5f, 0.0f, 0.0f), 0.0f);
-    room2.scale = glm::vec3(6.0f, 5.0f, 5.0f);
+    Room room2(glm::vec3(-2.5f, 2.5f, 0.0f), 0.0f);
+    room2.scale = glm::vec3(6.0f, 5.0f, 6.0f);
 
-    Room room3(glm::vec3(3.75f, 0.0f, 3.25f), 0.0f);
+    Room room3(glm::vec3(3.75f, 2.5f, 3.25f), 0.0f);
     room3.scale = glm::vec3(6.5f, 5.0f, 8.0f);
+
+    // sala
+    Rack rack1(glm::vec3(6.45f, 0.65f, 2.25f), -90.0f);
+    rack1.scale = glm::vec3(1.0f);
+    rack1.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Rack rack2(glm::vec3(6.45f, 0.65f, 3.25f), -90.0f);
+    rack2.scale = glm::vec3(1.0f);
+    rack2.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Rack rack3(glm::vec3(6.45f, 0.65f, 4.25f), -90.0f);
+    rack3.scale = glm::vec3(1.0f);
+    rack3.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Television television(glm::vec3(6.6f, 2.0f, 3.25f), -90.0f);
+    television.scale = glm::vec3(2.0f);
+    television.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Sofa sofa(glm::vec3(4.0f, 0.65f, 3.25f), 90.0f);
+    sofa.scale = glm::vec3(2.5f);
+    sofa.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    // quarto
+    Bed bed(glm::vec3(-3.15f, 0.9f, 0.0f), 90.0f);
+    bed.scale = glm::vec3(4.0f);
+    bed.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Pillow pillow1(glm::vec3(-4.65f, 1.7f, 0.7f), 90.0f);
+    pillow1.scale = glm::vec3(0.9f);
+    pillow1.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Pillow pillow2(glm::vec3(-4.65f, 1.7f, -0.7f), 90.0f);
+    pillow2.scale = glm::vec3(0.9f);
+    pillow2.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Pillow pillow3(glm::vec3(-4.25f, 1.75f, 0.0f), 90.0f);
+    pillow3.scale = glm::vec3(0.9f);
+    pillow3.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Rack rackQuarto1(glm::vec3(-4.8f, 0.65f, 2.0f), 90.0f);
+    rackQuarto1.scale = glm::vec3(0.8f);
+    rackQuarto1.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Rack rackQuarto2(glm::vec3(-4.8f, 0.65f, -2.0f), 90.0f);
+    rackQuarto2.scale = glm::vec3(0.8f);
+    rackQuarto2.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    // cozinha
+    Table table(glm::vec3(3.0f, 0.9f, -3.0f), 0.0f);
+    table.scale = glm::vec3(1.5f);
+
+    Chair chair1(glm::vec3(3.0f, 1.4f, -4.0f), 0.0f);
+    chair1.scale = glm::vec3(1.0f);
+
+    Chair chair2(glm::vec3(3.0f, 1.4f, -2.0f), 180.0f);
+    chair2.scale = glm::vec3(1.0f);
+    chair2.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Chair chair3(glm::vec3(4.0f, 1.4f, -3.0f), -90.0f);
+    chair3.scale = glm::vec3(1.0f);
+    chair3.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Chair chair4(glm::vec3(2.0f, 1.4f, -3.0f), 90.0f);
+    chair4.scale = glm::vec3(1.0f);
+    chair4.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Pot pot(glm::vec3(3.0f, 1.85f, -3.2f), 45.0f);
+    pot.scale = glm::vec3(0.65f);
+    pot.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+
+    Fork fork1(glm::vec3(3.1f, 1.75f, -2.5f), -90.0f);
+    fork1.scale = glm::vec3(0.1f);
+    fork1.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
+
+    Fork fork2(glm::vec3(3.17f, 1.75f, -2.5f), -90.0f);
+    fork2.scale = glm::vec3(0.1f);
+    fork2.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
+
+    Fork fork3(glm::vec3(3.24f, 1.75f, -2.5f), -90.0f);
+    fork3.scale = glm::vec3(0.1f);
+    fork3.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
+
+    Fork fork4(glm::vec3(3.31f, 1.75f, -2.5f), -90.0f);
+    fork4.scale = glm::vec3(0.1f);
+    fork4.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
+
+    Knife knife1(glm::vec3(2.9f, 1.75f, -2.5f), -90.0f);
+    knife1.scale = glm::vec3(0.1f);
+    knife1.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
+
+    Knife knife2(glm::vec3(2.83f, 1.75f, -2.5f), -90.0f);
+    knife2.scale = glm::vec3(0.1f);
+    knife2.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
+
+    Knife knife3(glm::vec3(2.76f, 1.75f, -2.5f), -90.0f);
+    knife3.scale = glm::vec3(0.1f);
+    knife3.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
+
+    Knife knife4(glm::vec3(2.69f, 1.75f, -2.5f), -90.0f);
+    knife4.scale = glm::vec3(0.1f);
+    knife4.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
 
     viraCamera(0.0f, -1.0f);
     //Loop principal
@@ -194,19 +263,40 @@ int main() {
 
         // --------- Desenho ---------
 
-        // table.draw(shader, model);
-        //chair.draw(shader, model);
-        //television.draw(shader, model);
-        //rack.draw(shader, model);
-        //sofa.draw(shader, model);
-        //fork.draw(shader, model);
-        //knife.draw(shader, model);
-        //bed.draw(shader, model);
-        //pillow.draw(shader, model);
-        //pot.draw(shader, model);
         room1.draw(shader, model);
         room2.draw(shader, model);
         room3.draw(shader, model);
+
+        // sala
+        television.draw(shader, model);
+        rack1.draw(shader, model);
+        rack2.draw(shader, model);
+        rack3.draw(shader, model);
+        sofa.draw(shader, model);
+
+        // quarto
+        bed.draw(shader, model);
+        pillow1.draw(shader, model);
+        pillow2.draw(shader, model);
+        pillow3.draw(shader, model);
+        rackQuarto1.draw(shader, model);
+        rackQuarto2.draw(shader, model);
+
+        // cozinha
+        table.draw(shader, model);
+        chair1.draw(shader, model);
+        chair2.draw(shader, model);
+        chair3.draw(shader, model);
+        chair4.draw(shader, model);
+        pot.draw(shader, model);
+        fork1.draw(shader, model);
+        fork2.draw(shader, model);
+        fork3.draw(shader, model);
+        fork4.draw(shader, model);
+        knife1.draw(shader, model);
+        knife2.draw(shader, model);
+        knife3.draw(shader, model);
+        knife4.draw(shader, model);
 
         // Swap buffers e eventos
         glfwSwapBuffers(app.getWindow());

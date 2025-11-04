@@ -45,6 +45,8 @@ void Room::draw(Shader &shader, glm::mat4 model) {
 
     model = glm::translate(model, position);
     model = glm::scale(model, scale);
+    if (glm::length(rotation) > 0.0f)
+        model = glm::rotate(model, glm::radians(angle), glm::normalize(rotation));
 
     for (auto &part : parts) {
         part->draw(shader, model);

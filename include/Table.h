@@ -14,6 +14,9 @@ public:
     Table(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang);
     Table(glm::vec3 pos, float ang);
 
+    std::shared_ptr<Texture> texTampo;
+    std::shared_ptr<Texture> texCorpo;
+
     void init();
     void draw(Shader &shader, glm::mat4 model);
 

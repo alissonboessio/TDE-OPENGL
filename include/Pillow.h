@@ -14,6 +14,7 @@ public:
 
     Pillow(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang);
     Pillow(glm::vec3 pos, float ang);
+    std::shared_ptr<Texture> texTravesseiro;
 
     void init();
     void draw(Shader &shader, glm::mat4 model);

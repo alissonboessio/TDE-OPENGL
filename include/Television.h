@@ -15,6 +15,9 @@ public:
     Television(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang);
     Television(glm::vec3 pos, float ang);
 
+    std::shared_ptr<Texture> texCorpo;
+    std::shared_ptr<Texture> texMonitor;
+
     void init();
     void draw(Shader &shader, glm::mat4 model);
 

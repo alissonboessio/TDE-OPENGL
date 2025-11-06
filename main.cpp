@@ -94,8 +94,8 @@ void processInput(GLFWwindow* window, float deltaTime) {
 
 int main() {
     //Cria janela e inicializa OpenGL
-    Application app(1024, 768, "Cena: Cubos + Prisma + Cilindro");
-    if (!app.init()) return -1;  //depth test habilitado em Application::init()
+    Application app(1024, 768, "Planta Baixa");
+    if (!app.init()) return -1;
 
     float lastTime = glfwGetTime();
 
@@ -103,12 +103,7 @@ int main() {
     Shader shader("vertex.glsl", "fragment.glsl");
     shader.use();
 
-    //Texturas
-    Texture tex1("pedra-28.jpg");
-    Texture tex2("opengl.png");  // PNG com alpha
-
     shader.setInt("texture1", 0);
-    shader.setInt("texture2", 1);
 
     Room room1(glm::vec3(3.0f, 2.5f, -3.0f), 0.0f);
     room1.scale = glm::vec3(5.0f);
@@ -234,17 +229,12 @@ int main() {
         processInput(app.getWindow(), deltaTime);
 
         //Limpa tela e depth buffer
-        glClearColor(0.7f, 0.5f, 0.1f, 1.0f);
+        glClearColor(0.529f, 0.808f, 0.922f, 1.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
         shader.use();
 
-        //Model base com rotação leve global
         glm::mat4 model = glm::mat4(1.0f);
-        float angle = 20.0f;
-        /*model = glm::rotate(model,
-                            (angle * (float)glfwGetTime()) / 20.0f,
-                            glm::vec3(0.0f, 0.3f, 0.0f));*/
         shader.setMat4("model", model);
 
         //View e Projection
@@ -258,8 +248,6 @@ int main() {
         shader.setMat4("view", view);
 
         //Texturas
-        tex1.bind(0);
-        tex2.bind(1);
 
         // --------- Desenho ---------
 

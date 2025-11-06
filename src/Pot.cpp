@@ -19,18 +19,25 @@ Pot::Pot(glm::vec3 pos, float angle)
 
 void Pot::init() {
 
+    texCorpo = std::make_shared<Texture>("aluminio.jpg");
+    texPegador = std::make_shared<Texture>("madeira2.jpg");
+
     // Corpo
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.9f, 0.5f, 0.9f)
+        glm::vec3(0.9f, 0.5f, 0.9f),
+        0.0f,
+        texCorpo
     ));
 
     // Tampa
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.0f, 0.2525f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.95f, 0.05f, 0.95f)
+        glm::vec3(0.95f, 0.05f, 0.95f),
+        0.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Sphere>(
@@ -38,6 +45,7 @@ void Pot::init() {
         glm::vec3(0.0f),
         glm::vec3(1.0f),
         0.0f,
+        texPegador,
         0.08f
     ));
 
@@ -45,7 +53,9 @@ void Pot::init() {
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.5f, 0.1f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(1.0f, 0.1f, 0.1f)
+        glm::vec3(1.0f, 0.1f, 0.1f),
+        0.0f,
+        texPegador
     ));
 
 }

@@ -4,9 +4,9 @@
 #include <vector>
 #include <cmath>
 
-Sphere::Sphere(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang,
+Sphere::Sphere(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang, std::shared_ptr<Texture> tex,
                float radius, int stacks, int slices)
-    : position(pos), rotation(rot), scale(scl), angle(ang),
+    : position(pos), rotation(rot), scale(scl), angle(ang), tex(tex),
       radius_(radius), stacks_(stacks), slices_(slices)
 {
     buildMesh();
@@ -84,6 +84,10 @@ void Sphere::draw(Shader& shader, glm::mat4 model) {
     model = glm::translate(model, position);
     if (glm::length(rotation) > 0.0f)
         model = glm::rotate(model, glm::radians(angle), glm::normalize(rotation));
+
+    if (tex)
+        tex->bind(0);
+
     model = glm::scale(model, scale);
 
     shader.setMat4("model", model);

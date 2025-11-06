@@ -16,22 +16,31 @@ Table::Table(glm::vec3 pos, float angle)
 
 void Table::init() {
 
+    texTampo = std::make_shared<Texture>("marmore.jpg");
+    texCorpo = std::make_shared<Texture>("madeira2.jpg");
+
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.0f, 0.5f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(1.0f, 0.1f, 1.0f)
+        glm::vec3(1.0f, 0.1f, 1.0f),
+        0.0f,
+        texTampo
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.1f, 1.0f, 0.1f)
+        glm::vec3(0.1f, 1.0f, 0.1f),
+        0.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.0f, -0.5f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.4f, 0.1f, 0.4f)
+        glm::vec3(0.4f, 0.1f, 0.4f),
+        0.0f,
+        texCorpo
     ));
 
 }

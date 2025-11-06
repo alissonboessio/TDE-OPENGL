@@ -17,10 +17,14 @@ Pillow::Pillow(glm::vec3 pos, float angle)
 
 void Pillow::init() {
 
+    texTravesseiro = std::make_shared<Texture>("cetimmarrom.jpeg");
+
     parts.push_back(std::make_unique<Sphere>(
         glm::vec3(0.0f),
         glm::vec3(0.0f),
-        glm::vec3(0.7f, 0.2f, 0.35f)
+        glm::vec3(0.7f, 0.2f, 0.35f),
+        0.0f,
+        texTravesseiro
     ));
 
 }

@@ -16,20 +16,26 @@ Bed::Bed(glm::vec3 pos, float angle)
 }
 
 void Bed::init() {
+    texCorpo = std::make_shared<Texture>("lencolamassado.jpg");
+    texCabeceira = std::make_shared<Texture>("madeira2.jpg");
+    texPes = std::make_shared<Texture>("plasticopreto.jpeg");
 
     // colchao
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.7f, 0.35f, 1.0f)
+        glm::vec3(0.7f, 0.35f, 1.0f),
+        0.0f,
+        texCorpo
     ));
 
-    // encosto
+    // cabeceira
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.35f, -0.5f),
         glm::vec3(1.0f, 0.0f, 0.0f),
         glm::vec3(0.7f, 0.5f, 0.05f),
-        -2.0f
+        -2.0f,
+        texCabeceira
     ));
 
     // pes
@@ -37,28 +43,32 @@ void Bed::init() {
         glm::vec3(0.3f, -0.19f, -0.45f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.1f, 0.05f),
-        1.0f
+        1.0f,
+        texPes
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(-0.3f, -0.19f, -0.45f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.1f, 0.05f),
-        -1.0f
+        -1.0f,
+        texPes
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.3f, -0.19f, 0.45f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.1f, 0.05f),
-        1.0f
+        1.0f,
+        texPes
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(-0.3f, -0.19f, 0.45f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.1f, 0.05f),
-        -1.0f
+        -1.0f,
+        texPes
     ));
 
 

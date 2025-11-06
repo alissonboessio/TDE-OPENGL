@@ -4,9 +4,9 @@
 #include <vector>
 #include <cmath>
 
-Cylinder::Cylinder(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang,
+Cylinder::Cylinder(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang, std::shared_ptr<Texture> tex,
                    float height, float radius, int segments)
-    : position(pos), rotation(rot), scale(scl), angle(ang),
+    : position(pos), rotation(rot), scale(scl), angle(ang), tex(tex),
       height_(height), radius_(radius), segments_(segments)
 {
     buildMesh();
@@ -122,6 +122,10 @@ void Cylinder::draw(Shader& shader, glm::mat4 model) {
     model = glm::translate(model, position);
     if (glm::length(rotation) > 0.0f)
         model = glm::rotate(model, glm::radians(angle), glm::normalize(rotation));
+
+    if (tex)
+        tex->bind(0);
+
     model = glm::scale(model, scale);
 
     shader.setMat4("model", model);

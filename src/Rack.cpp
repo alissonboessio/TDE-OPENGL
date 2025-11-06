@@ -17,11 +17,16 @@ Rack::Rack(glm::vec3 pos, float angle)
 }
 
 void Rack::init() {
+    texCorpo = std::make_shared<Texture>("madeira2.jpg");
+    texPegador = std::make_shared<Texture>("madeira2.jpg");
+    texPorta = std::make_shared<Texture>("texturacreme.webp");
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(1.0f, 1.0f, 0.7f)
+        glm::vec3(1.0f, 1.0f, 0.7f),
+        0.0f,
+        texCorpo
     ));
 
     // pes
@@ -29,35 +34,41 @@ void Rack::init() {
         glm::vec3(0.4f, -0.5f, -0.25f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        15.0f
+        15.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(-0.4f, -0.5f, -0.25f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        -15.0f
+        -15.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.4f, -0.5f, 0.25f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        15.0f
+        15.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(-0.4f, -0.5f, 0.25f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        -15.0f
+        -15.0f,
+        texCorpo
     ));
 
     // portas
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.25f, 0.35f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.9f, 0.45f, 0.05f)
+        glm::vec3(0.9f, 0.45f, 0.05f),
+        0.0f,
+        texPorta
     ));
 
     parts.push_back(std::make_unique<Sphere>(
@@ -65,13 +76,16 @@ void Rack::init() {
         glm::vec3(0.0f),
         glm::vec3(1.0f),
         0.0f,
+        texPegador,
         0.05f
     ));
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, -0.25f, 0.35f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.9f, 0.45f, 0.05f)
+        glm::vec3(0.9f, 0.45f, 0.05f),
+        0.0f,
+        texPorta
     ));
 
     parts.push_back(std::make_unique<Sphere>(
@@ -79,6 +93,7 @@ void Rack::init() {
         glm::vec3(0.0f),
         glm::vec3(1.0f),
         0.0f,
+        texPegador,
         0.05f
     ));
 

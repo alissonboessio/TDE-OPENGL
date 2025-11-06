@@ -14,29 +14,49 @@ Room::Room(glm::vec3 pos, float angle)
 }
 
 void Room::init() {
+    texChao = std::make_shared<Texture>("pisoquarto.jpg");
+    texParede = std::make_shared<Texture>("paredebranca.jpg");
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(-0.5f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.05f, 1.0f, 1.0f)
+        glm::vec3(0.05f, 1.0f, 1.0f),
+        0.0f,
+        texParede
     ));
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.5f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.05f, 1.0f, 1.0f)
+        glm::vec3(0.05f, 1.0f, 1.0f),
+        0.0f,
+        texParede
     ));
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, 0.475f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.95f, 1.0f, 0.05f)
+        glm::vec3(0.95f, 1.0f, 0.05f),
+        0.0f,
+        texParede
     ));
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, -0.475f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.95f, 1.0f, 0.05f)
+        glm::vec3(0.95f, 1.0f, 0.05f),
+        0.0f,
+        texParede
+    ));
+
+
+    //chao
+    parts.push_back(std::make_unique<Cube>(
+        glm::vec3(0.0f, -0.5f, 0.0f),
+        glm::vec3(0.0f, 0.0f, 0.0f),
+        glm::vec3(1.0f, 0.005f, 1.0f),
+        0.0f,
+        texChao
     ));
 
 }

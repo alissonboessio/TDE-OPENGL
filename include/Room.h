@@ -14,6 +14,9 @@ public:
     Room(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang);
     Room(glm::vec3 pos, float ang);
 
+    std::shared_ptr<Texture> texParede;
+    std::shared_ptr<Texture> texChao;
+
     void init();
     void draw(Shader &shader, glm::mat4 model);
 

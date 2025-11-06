@@ -10,6 +10,7 @@ public:
            glm::vec3 rot = glm::vec3(0.0f, 1.0f, 0.0f),
            glm::vec3 scl = glm::vec3(1.0f),
            float angle = 0.0f,
+           std::shared_ptr<Texture> tex = nullptr,
            float radius = 1.0f,
            int stacks = 32,
            int slices = 48);
@@ -20,6 +21,7 @@ public:
     glm::vec3 rotation;
     glm::vec3 scale;
     float angle;
+    std::shared_ptr<Texture> tex;
 
 private:
     unsigned int VAO = 0, VBO = 0, EBO = 0;

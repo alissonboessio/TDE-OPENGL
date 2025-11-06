@@ -83,6 +83,7 @@ void Chair::init() {
         glm::vec3(0.0f),
         glm::vec3(1.0f),
         0.0f,
+        nullptr,
         0.07f
     ));
 
@@ -91,6 +92,7 @@ void Chair::init() {
         glm::vec3(0.0f),
         glm::vec3(1.0f),
         0.0f,
+        nullptr,
         0.07f
     ));
 

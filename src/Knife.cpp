@@ -16,18 +16,24 @@ Knife::Knife(glm::vec3 pos, float angle)
 
 void Knife::init() {
 
+    texCorpo = std::make_shared<Texture>("aluminio.jpg");
+
     // corpo
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.2f, 2.0f, 0.05f)
+        glm::vec3(0.2f, 2.0f, 0.05f),
+        0.0f,
+        texCorpo
     ));
 
     // lamina
     parts.push_back(std::make_unique<Sphere>(
         glm::vec3(-0.07f, 0.425f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.15f, 0.6f, 0.025f)
+        glm::vec3(0.15f, 0.6f, 0.025f),
+        0.0f,
+        texCorpo
     ));
 
 }

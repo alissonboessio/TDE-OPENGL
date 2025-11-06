@@ -3,6 +3,7 @@
 #include "Cube.h"
 #include "Cylinder.h"
 #include "Sphere.h"
+#include "Texture.h"
 
 Sofa::Sofa(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float angle)
     : Object(pos, rot, scl, angle)
@@ -16,13 +17,19 @@ Sofa::Sofa(glm::vec3 pos, float angle)
     init();
 }
 
+
 void Sofa::init() {
+
+    texCorpo = std::make_shared<Texture>("sofa.jpg");
+    texPes = std::make_shared<Texture>("madeira2.jpg");
 
     // assento
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(1.0f, 0.35f, 0.6f)
+        glm::vec3(1.0f, 0.35f, 0.6f),
+        0.0f,
+        texCorpo
     ));
 
     // encosto
@@ -30,34 +37,41 @@ void Sofa::init() {
         glm::vec3(0.0f, 0.35f, -0.25f),
         glm::vec3(1.0f, 0.0f, 0.0f),
         glm::vec3(1.0f, 0.5f, 0.15f),
-        -10.0f
+        -10.0f,
+        texCorpo
     ));
 
     // bracos
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(-0.425f, 0.2f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.15f, 0.1f, 0.55f)
+        glm::vec3(0.15f, 0.1f, 0.55f),
+        0.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(-0.425f, 0.25f, 0.0f),
         glm::vec3(1.0f, 0.0f, 0.0f),
         glm::vec3(0.15f, 0.55f, 0.15f),
-        90.f
+        90.f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.425f, 0.2f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.15f, 0.1f, 0.55f)
+        glm::vec3(0.15f, 0.1f, 0.55f),
+        0.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.425f, 0.25f, 0.0f),
         glm::vec3(1.0f, 0.0f, 0.0f),
         glm::vec3(0.15f, 0.55f, 0.15f),
-        90.f
+        90.f,
+        texCorpo
     ));
 
     // pes
@@ -65,28 +79,32 @@ void Sofa::init() {
         glm::vec3(0.4f, -0.1f, -0.25f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        15.0f
+        15.0f,
+        texPes
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(-0.4f, -0.1f, -0.25f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        -15.0f
+        -15.0f,
+        texPes
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.4f, -0.1f, 0.25f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        15.0f
+        15.0f,
+        texPes
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(-0.4f, -0.1f, 0.25f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        -15.0f
+        -15.0f,
+        texPes
     ));
 
 

@@ -16,25 +16,40 @@ Television::Television(glm::vec3 pos, float angle)
 }
 
 void Television::init() {
+    texCorpo = std::make_shared<Texture>("plasticopreto.jpeg");
+    texMonitor = std::make_shared<Texture>("monitor.jpg");
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(1.0f, 0.7f, 0.1f)
+        glm::vec3(1.0f, 0.7f, 0.1f),
+        0.0f,
+        texCorpo
+    ));
+
+    // monitor
+    parts.push_back(std::make_unique<Cube>(
+        glm::vec3(0.0f, 0.0f, 0.0525f),
+        glm::vec3(0.0f, 0.0f, 0.0f),
+        glm::vec3(0.9f, 0.6f, 0.005f),
+        0.0f,
+        texMonitor
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.4f, -0.35f, 0.0f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        30.0f
+        30.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(-0.4f, -0.35f, 0.0f),
         glm::vec3(0.0f, 0.0f, 1.0f),
         glm::vec3(0.05f, 0.3f, 0.05f),
-        -30.0f
+        -30.0f,
+        texCorpo
     ));
 
 }

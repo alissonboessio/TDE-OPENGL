@@ -15,45 +15,58 @@ Fork::Fork(glm::vec3 pos, float angle)
 
 void Fork::init() {
 
-    // corpo
+    texCorpo = std::make_shared<Texture>("aluminio.jpg");
+    texPegador = std::make_shared<Texture>("madeira2.jpg");
+
+    // pegador
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, -0.5f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.2f, 0.85f, 0.05f)
+        glm::vec3(0.2f, 0.85f, 0.05f),
+        0.0f,
+        texPegador
     ));
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.55f, 0.15f, 0.05f)
+        glm::vec3(0.55f, 0.15f, 0.05f),
+        0.0f,
+        texCorpo
     ));
 
     //dentes
-
-
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(-0.225f, 0.35f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.1f, 0.55f, 0.05f)
+        glm::vec3(0.1f, 0.55f, 0.05f),
+        0.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(-0.075f, 0.35f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.1f, 0.55f, 0.05f)
+        glm::vec3(0.1f, 0.55f, 0.05f),
+        0.0f,
+        texCorpo
     ));
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.075f, 0.35f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.1f, 0.55f, 0.05f)
+        glm::vec3(0.1f, 0.55f, 0.05f),
+        0.0f,
+        texCorpo
     ));
 
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.225f, 0.35f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
-        glm::vec3(0.1f, 0.55f, 0.05f)
+        glm::vec3(0.1f, 0.55f, 0.05f),
+        0.0f,
+        texCorpo
     ));
 
 

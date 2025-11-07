@@ -22,10 +22,12 @@ Texture::Texture(const std::string& path, bool flip) {
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 
     GLenum format = (nrChannels == 4) ? GL_RGBA : GL_RGB;
+    glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
     glTexImage2D(GL_TEXTURE_2D, 0, format, width, height, 0, format, GL_UNSIGNED_BYTE, data);
     glGenerateMipmap(GL_TEXTURE_2D);
 
     stbi_image_free(data);
+    std::cout << "[OK] Textura carregada: " << path << " (" << width << "x" << height << ")\n";
 }
 
 Texture::~Texture() {

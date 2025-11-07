@@ -6,6 +6,7 @@
 #include <vector>
 #include "Shader.h"
 #include "Texture.h"
+#include "TextureManager.h"
 #include <memory>
 
 class Object {
@@ -20,6 +21,7 @@ public:
     Object(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang, std::shared_ptr<Texture> tex = nullptr);
 
     virtual void draw(Shader& shader, glm::mat4 parentTransform);
+    virtual void setTextures();
     virtual ~Object() {}
 };
 

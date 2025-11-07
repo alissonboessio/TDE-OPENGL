@@ -18,6 +18,7 @@ public:
     std::shared_ptr<Texture> texPes;
 
     void init();
+    void setTextures();
     void draw(Shader &shader, glm::mat4 model);
 
 private:

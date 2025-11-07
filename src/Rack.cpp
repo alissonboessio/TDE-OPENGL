@@ -7,19 +7,25 @@
 Rack::Rack(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float angle)
     : Object(pos, rot, scl, angle)
 {
+    setTextures();
     init();
 }
 
 Rack::Rack(glm::vec3 pos, float angle)
     : Object(pos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), angle)
 {
+    setTextures();
     init();
 }
 
+void Rack::setTextures() {
+    texCorpo = TextureManager::load("madeira2.jpg");
+    texPegador = TextureManager::load("madeira2.jpg");
+    texPorta = TextureManager::load("texturacreme.webp");
+}
+
 void Rack::init() {
-    texCorpo = std::make_shared<Texture>("madeira2.jpg");
-    texPegador = std::make_shared<Texture>("madeira2.jpg");
-    texPorta = std::make_shared<Texture>("texturacreme.webp");
+    parts.clear();
 
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, 0.0f),

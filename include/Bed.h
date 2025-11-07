@@ -16,9 +16,11 @@ public:
     Bed(glm::vec3 pos, float ang);
     std::shared_ptr<Texture> texPes;
     std::shared_ptr<Texture> texCorpo;
+    std::shared_ptr<Texture> texColchao;
     std::shared_ptr<Texture> texCabeceira;
 
     void init();
+    void setTextures();
     void draw(Shader &shader, glm::mat4 model);
 
 private:

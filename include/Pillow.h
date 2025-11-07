@@ -17,6 +17,7 @@ public:
     std::shared_ptr<Texture> texTravesseiro;
 
     void init();
+    void setTextures();
     void draw(Shader &shader, glm::mat4 model);
 
 private:

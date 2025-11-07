@@ -51,6 +51,7 @@
 		<Unit filename="include/Chair.h" />
 		<Unit filename="include/Cube.h" />
 		<Unit filename="include/Cylinder.h" />
+		<Unit filename="include/Door.h" />
 		<Unit filename="include/Fork.h" />
 		<Unit filename="include/Knife.h" />
 		<Unit filename="include/Mesh.h" />
@@ -66,6 +67,7 @@
 		<Unit filename="include/Table.h" />
 		<Unit filename="include/Television.h" />
 		<Unit filename="include/Texture.h" />
+		<Unit filename="include/TextureManager.h" />
 		<Unit filename="include/stb_image.h" />
 		<Unit filename="main.cpp" />
 		<Unit filename="src/Application.cpp" />
@@ -73,6 +75,7 @@
 		<Unit filename="src/Chair.cpp" />
 		<Unit filename="src/Cube.cpp" />
 		<Unit filename="src/Cylinder.cpp" />
+		<Unit filename="src/Door.cpp" />
 		<Unit filename="src/Fork.cpp" />
 		<Unit filename="src/Knife.cpp" />
 		<Unit filename="src/Mesh.cpp" />
@@ -87,6 +90,7 @@
 		<Unit filename="src/Table.cpp" />
 		<Unit filename="src/Television.cpp" />
 		<Unit filename="src/Texture.cpp" />
+		<Unit filename="src/TextureManager.cpp" />
 		<Unit filename="src/stb_image.cpp" />
 		<Extensions />
 	</Project>

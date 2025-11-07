@@ -23,6 +23,8 @@
 #include <Pillow.h>
 #include <Pot.h>
 #include <Room.h>
+#include <TextureManager.h>
+#include <Door.h>
 
 #include <iostream>
 
@@ -95,7 +97,9 @@ void processInput(GLFWwindow* window, float deltaTime) {
 int main() {
     //Cria janela e inicializa OpenGL
     Application app(1024, 768, "Planta Baixa");
-    if (!app.init()) return -1;
+    if (!app.init()) {
+        return -1;
+    }
 
     float lastTime = glfwGetTime();
 
@@ -105,14 +109,34 @@ int main() {
 
     shader.setInt("texture1", 0);
 
+    auto chaoMundo = std::make_unique<Cube>(
+        glm::vec3(0.0f, -0.1f, 0.0f),
+        glm::vec3(0.0f, 0.0f, 0.0f),
+        glm::vec3(200.0f, 0.005f, 200.0f),
+        0.0f,
+        TextureManager::load("verde.jpeg")
+    );
+
     Room room1(glm::vec3(3.0f, 2.5f, -3.0f), 0.0f);
     room1.scale = glm::vec3(5.0f);
+    room1.texChao = TextureManager::load("piso-xadrez.jpg");
+    room1.init();
+
+    Door door1(glm::vec3(2.0f, 2.0f, -0.55f), 0.0f);
+    door1.scale = glm::vec3(5.0f, 4.5f, 5.0f);
 
     Room room2(glm::vec3(-2.5f, 2.5f, 0.0f), 0.0f);
     room2.scale = glm::vec3(6.0f, 5.0f, 6.0f);
 
+    Door door2(glm::vec3(0.5f, 2.0f, 1.15f), 90.0f);
+    door2.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
+    door2.scale = glm::vec3(3.55f, 4.5f, 5.0f);
+
     Room room3(glm::vec3(3.75f, 2.5f, 3.25f), 0.0f);
     room3.scale = glm::vec3(6.5f, 5.0f, 8.0f);
+
+    Door door3(glm::vec3(2.0f, 2.0f, 7.05f), 0.0f);
+    door3.scale = glm::vec3(6.5f, 4.5f, 5.0f);
 
     // sala
     Rack rack1(glm::vec3(6.45f, 0.65f, 2.25f), -90.0f);
@@ -251,9 +275,14 @@ int main() {
 
         // --------- Desenho ---------
 
+        chaoMundo->draw(shader, model);
+
         room1.draw(shader, model);
+        door1.draw(shader, model);
         room2.draw(shader, model);
+        door2.draw(shader, model);
         room3.draw(shader, model);
+        door3.draw(shader, model);
 
         // sala
         television.draw(shader, model);

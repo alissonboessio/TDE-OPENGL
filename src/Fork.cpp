@@ -4,19 +4,24 @@
 Fork::Fork(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float angle)
     : Object(pos, rot, scl, angle)
 {
+    setTextures();
     init();
 }
 
 Fork::Fork(glm::vec3 pos, float angle)
     : Object(pos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), angle)
 {
+    setTextures();
     init();
 }
 
-void Fork::init() {
+void Fork::setTextures() {
+    texCorpo = TextureManager::load("aluminio.jpg");
+    texPegador = TextureManager::load("madeira2.jpg");
+}
 
-    texCorpo = std::make_shared<Texture>("aluminio.jpg");
-    texPegador = std::make_shared<Texture>("madeira2.jpg");
+void Fork::init() {
+    parts.clear();
 
     // pegador
     parts.push_back(std::make_unique<Cube>(

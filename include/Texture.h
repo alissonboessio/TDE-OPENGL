@@ -6,10 +6,10 @@
 
 class Texture {
 private:
-    unsigned int ID;
-    int width, height, nrChannels;
 
 public:
+    unsigned int ID;
+    int width, height, nrChannels;
     Texture(const std::string& path, bool flip = true);
     ~Texture();
 

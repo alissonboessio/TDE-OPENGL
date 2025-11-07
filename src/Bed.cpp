@@ -6,25 +6,41 @@
 Bed::Bed(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float angle)
     : Object(pos, rot, scl, angle)
 {
+    setTextures();
     init();
 }
 
 Bed::Bed(glm::vec3 pos, float angle)
     : Object(pos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), angle)
 {
+    setTextures();
     init();
 }
 
-void Bed::init() {
-    texCorpo = std::make_shared<Texture>("lencolamassado.jpg");
-    texCabeceira = std::make_shared<Texture>("madeira2.jpg");
-    texPes = std::make_shared<Texture>("plasticopreto.jpeg");
+void Bed::setTextures() {
+    texColchao = TextureManager::load("colchao.jpeg");
+    texCorpo = TextureManager::load("lencolamassado.jpg");
+    texCabeceira = TextureManager::load("madeira2.jpg");
+    texPes = TextureManager::load("plasticopreto.jpeg");
+}
 
-    // colchao
+void Bed::init() {
+    parts.clear();
+
+    // corpo
     parts.push_back(std::make_unique<Cube>(
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.0f, 0.0f, 0.0f),
         glm::vec3(0.7f, 0.35f, 1.0f),
+        0.0f,
+        texColchao
+    ));
+
+    // colchao
+    parts.push_back(std::make_unique<Cube>(
+        glm::vec3(0.0f, 0.175f, 0.0f),
+        glm::vec3(0.0f, 0.0f, 0.0f),
+        glm::vec3(0.7f, 0.005f, 1.0f),
         0.0f,
         texCorpo
     ));

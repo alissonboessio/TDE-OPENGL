@@ -19,6 +19,7 @@ public:
     std::shared_ptr<Texture> texPegador;
 
     void init();
+    void setTextures();
     void draw(Shader &shader, glm::mat4 model);
 
 private:

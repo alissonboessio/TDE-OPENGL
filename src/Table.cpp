@@ -5,19 +5,25 @@
 Table::Table(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float angle)
     : Object(pos, rot, scl, angle)
 {
+    setTextures();
     init();
 }
 
 Table::Table(glm::vec3 pos, float angle)
     : Object(pos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), angle)
 {
+    setTextures();
     init();
 }
 
-void Table::init() {
+void Table::setTextures() {
+    texTampo = TextureManager::load("marmore.jpg");
+    texCorpo = TextureManager::load("madeira2.jpg");
+}
 
-    texTampo = std::make_shared<Texture>("marmore.jpg");
-    texCorpo = std::make_shared<Texture>("madeira2.jpg");
+void Table::init() {
+    parts.clear();
+
 
     parts.push_back(std::make_unique<Cylinder>(
         glm::vec3(0.0f, 0.5f, 0.0f),

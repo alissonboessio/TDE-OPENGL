@@ -24,3 +24,7 @@ void Object::draw(Shader& shader, glm::mat4 parentTransform)
     // model = glm::scale(model, scale);
     // shader.setMat4("model", model);
 }
+
+void Object::setTextures()
+{
+}

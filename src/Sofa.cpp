@@ -8,20 +8,25 @@
 Sofa::Sofa(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float angle)
     : Object(pos, rot, scl, angle)
 {
+    setTextures();
     init();
 }
 
 Sofa::Sofa(glm::vec3 pos, float angle)
     : Object(pos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), angle)
 {
+    setTextures();
     init();
 }
 
+void Sofa::setTextures() {
+    texCorpo = TextureManager::load("sofa.jpg");
+    texPes = TextureManager::load("madeira2.jpg");
+}
 
 void Sofa::init() {
+    parts.clear();
 
-    texCorpo = std::make_shared<Texture>("sofa.jpg");
-    texPes = std::make_shared<Texture>("madeira2.jpg");
 
     // assento
     parts.push_back(std::make_unique<Cube>(

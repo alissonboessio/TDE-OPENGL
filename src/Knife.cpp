@@ -5,18 +5,23 @@
 Knife::Knife(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float angle)
     : Object(pos, rot, scl, angle)
 {
+    setTextures();
     init();
 }
 
 Knife::Knife(glm::vec3 pos, float angle)
     : Object(pos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), angle)
 {
+    setTextures();
     init();
 }
 
-void Knife::init() {
+void Knife::setTextures() {
+    texCorpo = TextureManager::load("aluminio.jpg");
+}
 
-    texCorpo = std::make_shared<Texture>("aluminio.jpg");
+void Knife::init() {
+    parts.clear();
 
     // corpo
     parts.push_back(std::make_unique<Cube>(

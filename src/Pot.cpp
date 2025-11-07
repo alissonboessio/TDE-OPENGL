@@ -8,19 +8,25 @@
 Pot::Pot(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float angle)
     : Object(pos, rot, scl, angle)
 {
+    setTextures();
     init();
 }
 
 Pot::Pot(glm::vec3 pos, float angle)
     : Object(pos, glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3(1.0f, 1.0f, 1.0f), angle)
 {
+    setTextures();
     init();
 }
 
-void Pot::init() {
+void Pot::setTextures() {
+    texCorpo = TextureManager::load("aluminio.jpg");
+    texPegador = TextureManager::load("madeira2.jpg");
+}
 
-    texCorpo = std::make_shared<Texture>("aluminio.jpg");
-    texPegador = std::make_shared<Texture>("madeira2.jpg");
+void Pot::init() {
+    parts.clear();
+
 
     // Corpo
     parts.push_back(std::make_unique<Cylinder>(

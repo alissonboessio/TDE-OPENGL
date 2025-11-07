@@ -14,7 +14,11 @@ public:
     Chair(glm::vec3 pos, glm::vec3 rot, glm::vec3 scl, float ang);
     Chair(glm::vec3 pos, float ang);
 
+    std::shared_ptr<Texture> texCorpo;
+    std::shared_ptr<Texture> texAssento;
+
     void init();
+    void setTextures();
     void draw(Shader &shader, glm::mat4 model);
 
 private:

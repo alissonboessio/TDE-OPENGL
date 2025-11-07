@@ -18,6 +18,7 @@ public:
     std::shared_ptr<Texture> texCorpo;
 
     void init();
+    void setTextures();
     void draw(Shader &shader, glm::mat4 model);
 
 private:

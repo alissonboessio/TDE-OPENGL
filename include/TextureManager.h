@@ -8,7 +8,7 @@
 
 class TextureManager {
 public:
-    static std::shared_ptr<Texture> load(const std::string& path, bool flip = true);
+    static std::shared_ptr<Texture> load(const std::string& path);
 
 private:
     static std::unordered_map<std::string, std::weak_ptr<Texture>> cache;

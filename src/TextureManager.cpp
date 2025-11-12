@@ -2,7 +2,7 @@
 
 std::unordered_map<std::string, std::weak_ptr<Texture>> TextureManager::cache;
 
-std::shared_ptr<Texture> TextureManager::load(const std::string& path, bool flip) {
+std::shared_ptr<Texture> TextureManager::load(const std::string& path) {
     auto it = cache.find(path);
     if (it != cache.end()) {
         if (auto existing = it->second.lock()) {
@@ -10,7 +10,7 @@ std::shared_ptr<Texture> TextureManager::load(const std::string& path, bool flip
         }
     }
 
-    auto tex = std::make_shared<Texture>(path, flip);
+    auto tex = std::make_shared<Texture>(path);
     cache[path] = tex;
     return tex;
 }

@@ -207,35 +207,35 @@ int main() {
     pot.scale = glm::vec3(0.65f);
     pot.rotation = glm::vec3(0.0f, 1.0f, 0.0f);
 
-    Fork fork1(glm::vec3(3.1f, 1.75f, -2.5f), -90.0f);
+    Fork fork1(glm::vec3(3.1f, 1.735f, -2.5f), -90.0f);
     fork1.scale = glm::vec3(0.1f);
     fork1.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
 
-    Fork fork2(glm::vec3(3.17f, 1.75f, -2.5f), -90.0f);
+    Fork fork2(glm::vec3(3.17f, 1.735f, -2.5f), -90.0f);
     fork2.scale = glm::vec3(0.1f);
     fork2.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
 
-    Fork fork3(glm::vec3(3.24f, 1.75f, -2.5f), -90.0f);
+    Fork fork3(glm::vec3(3.24f, 1.735f, -2.5f), -90.0f);
     fork3.scale = glm::vec3(0.1f);
     fork3.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
 
-    Fork fork4(glm::vec3(3.31f, 1.75f, -2.5f), -90.0f);
+    Fork fork4(glm::vec3(3.31f, 1.735f, -2.5f), -90.0f);
     fork4.scale = glm::vec3(0.1f);
     fork4.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
 
-    Knife knife1(glm::vec3(2.9f, 1.75f, -2.5f), -90.0f);
+    Knife knife1(glm::vec3(2.9f, 1.735f, -2.5f), -90.0f);
     knife1.scale = glm::vec3(0.1f);
     knife1.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
 
-    Knife knife2(glm::vec3(2.83f, 1.75f, -2.5f), -90.0f);
+    Knife knife2(glm::vec3(2.83f, 1.735f, -2.5f), -90.0f);
     knife2.scale = glm::vec3(0.1f);
     knife2.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
 
-    Knife knife3(glm::vec3(2.76f, 1.75f, -2.5f), -90.0f);
+    Knife knife3(glm::vec3(2.76f, 1.735f, -2.5f), -90.0f);
     knife3.scale = glm::vec3(0.1f);
     knife3.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
 
-    Knife knife4(glm::vec3(2.69f, 1.75f, -2.5f), -90.0f);
+    Knife knife4(glm::vec3(2.69f, 1.735f, -2.5f), -90.0f);
     knife4.scale = glm::vec3(0.1f);
     knife4.rotation = glm::vec3(1.0f, 0.0f, 0.0f);
 

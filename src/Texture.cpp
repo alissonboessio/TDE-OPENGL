@@ -27,7 +27,7 @@ Texture::Texture(const std::string& path, bool flip) {
     glGenerateMipmap(GL_TEXTURE_2D);
 
     stbi_image_free(data);
-    std::cout << "[OK] Textura carregada: " << path << " (" << width << "x" << height << ")\n";
+    std::cout << "Textura carregada: " << path << " (" << width << "x" << height << ")\n";
 }
 
 Texture::~Texture() {
